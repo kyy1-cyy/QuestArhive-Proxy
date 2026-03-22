@@ -55,7 +55,7 @@ app.get('/:filename', async (req, res) => {
     }
 });
 
-// Bind to 0.0.0.0 for Railway compatibility
-app.listen(PORT, '0.0.0.0', () => {
+// Render compatibility: listen on process.env.PORT
+app.listen(PORT, () => {
     console.log(`Global Proxy Server running on port ${PORT}`);
 });
