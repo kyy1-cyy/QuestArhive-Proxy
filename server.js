@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
     res.send('R2 High-Speed Proxy is running.');
 });
 
+// Simple health check route for UptimeRobot
+app.get('/ping', (req, res) => {
+    res.status(200).send('pong');
+});
+
 // The main Proxy Route: Streams file from Cloudflare R2 straight to user
 app.get('/:filename', async (req, res) => {
     const { filename } = req.params;
